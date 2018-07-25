@@ -1,7 +1,14 @@
-const resolver = {
+import { SayHelloResponse, SayHelloQueryArgs } from '../../../types/graph'
+
+const resolvers = {
   Query: {
-    sayHello: () => 'Hello~'
+    sayHello: (_, args: SayHelloQueryArgs): SayHelloResponse => {
+      return {
+        error: false,
+        text: "Hello~"
+      }
+    }
   }
 }
 
-export default resolver
+export default resolvers
