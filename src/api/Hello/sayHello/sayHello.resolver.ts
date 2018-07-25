@@ -5,7 +5,7 @@ const resolvers = {
     sayHello: (_, args: SayHelloQueryArgs): SayHelloResponse => {
       return {
         error: false,
-        text: "Hello~"
+        text: `Hello ${args.name}`
       }
     }
   }

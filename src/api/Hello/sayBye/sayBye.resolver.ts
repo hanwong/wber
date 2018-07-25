@@ -1,7 +1,7 @@
-const resolver = {
+const resolvers = {
   Query: {
     sayBye: () => 'Bye~'
   }
 }
 
-export default resolver
+export default resolvers
