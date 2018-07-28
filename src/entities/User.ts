@@ -1,4 +1,4 @@
-import bcrypt, { hashSync } from 'bcrypt'
+import bcrypt from 'bcrypt'
 import { IsEmail } from 'class-validator'
 import {
   BaseEntity,
@@ -77,6 +77,10 @@ class User extends BaseEntity {
       const hashPassword = await this.hashPassword(this.password)
       this.password = hashPassword
     }
+  }
+
+  public comparePassword (password: string) : Promise<boolean> {
+    return bcrypt.compare(password, this.password)
   }
 
   private hashPassword (password: string) : Promise<string> {
