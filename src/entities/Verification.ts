@@ -1,45 +1,51 @@
 import {
   BaseEntity,
+  BeforeInsert,
   Column,
   CreateDateColumn,
   Entity,
+  ManyToOne,
   PrimaryGeneratedColumn,
-  UpdateDateColumn,
-  BeforeInsert
-} from 'typeorm'
-import { verificationTarget } from '../types/types'
+  UpdateDateColumn
+} from "typeorm";
+import { verificationTarget } from "../types/types";
+import User from "./User";
 
-const PHONE = 'PHONE'
-const EMAIL = 'EMAIL'
+const PHONE = "PHONE";
+const EMAIL = "EMAIL";
 
 @Entity()
 class Verification extends BaseEntity {
-  @PrimaryGeneratedColumn() id: number
+  @PrimaryGeneratedColumn() id: number;
 
-  @Column({ type: 'text', enum: [PHONE, EMAIL] })
-  target: verificationTarget
+  @Column({ type: "text", enum: [PHONE, EMAIL] })
+  target: verificationTarget;
 
-  @Column({ type: 'text' })
-  payload: string
+  @Column({ type: "text" })
+  payload: string;
 
-  @Column({ type: 'text' })
-  key: string
+  @Column({ type: "text" })
+  key: string;
 
-  @Column({ type: 'boolean', default: false })
-  used: boolean
+  @Column({ type: "boolean", default: false })
+  used: boolean;
 
-  @CreateDateColumn() createdAt: string
+  @ManyToOne(type => User, user => user.verifications)
+  user: User;
 
-  @UpdateDateColumn() updatedAt: string
+  @CreateDateColumn() createdAt: string;
+
+  @UpdateDateColumn() updatedAt: string;
 
   @BeforeInsert()
-  createKey () : void {
+  createKey(): void {
     if (this.target === PHONE) {
-      this.key = Math.floor(Math.random() * 100000).toString()
+      this.key = Math.floor(Math.random() * 100000).toString();
     } else if (this.target === EMAIL) {
-      this.key = Math.random().toString(36).substr(2)
+      this.key = Math.random()
+        .toString(36)
+        .substr(2);
     }
   }
 }
-
-export default Verification
+export default Verification;
