@@ -7,7 +7,7 @@ import connectionOptions from './ormConfig';
 dotenv.config();
 
 const PORT : number | string =  process.env.PORT || 4000;
-const PLAYGROUND_ENDPOINT : string = '/plaryground';
+const PLAYGROUND_ENDPOINT : string = '/playground';
 const GRAPHGL_ENDPOINT : string = '/graphgl';
 
 const appOptions : Options = {
