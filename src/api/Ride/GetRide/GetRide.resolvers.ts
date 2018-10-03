@@ -14,7 +14,10 @@ const resolvers: Resolvers = {
             id: args.rideId
           });
 
+          // user.isRiding = false;
+          // user.save();
           if (ride) {
+            // ride.remove();
             if (ride.passengerId === user.id || ride.driverId === user.id) {
               return {
                 ok: true,
