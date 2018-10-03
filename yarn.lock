@@ -2563,10 +2563,10 @@ merge-descriptors@1.0.1:
   resolved "https://registry.yarnpkg.com/merge-descriptors/-/merge-descriptors-1.0.1.tgz#b00aaa556dd8b44568150ec9d1b953f3f90cbb61"
   integrity sha1-sAqqVW3YtEVoFQ7J0blT8/kMu2E=
 
-merge-graphql-schemas@^1.5.3:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/merge-graphql-schemas/-/merge-graphql-schemas-1.5.3.tgz#0599b1a7a1be8cea67860097e061e4365f23dc30"
-  integrity sha512-2gAufE4Tx5Wih9RZLqGjxIAW208kM+r6GsCEi1Ro1DfOd8HBERIAqlXWBTZi/GTvUYXtjsjWr1doY5MMSRsNww==
+merge-graphql-schemas@1.5.2:
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/merge-graphql-schemas/-/merge-graphql-schemas-1.5.2.tgz#7e75afb56cea6ff163924744846817d054c1ebaf"
+  integrity sha512-KomSriblDYY6A2wixXf9jHRGTPBn37MrhlObEqXY14qA3xwdf4Osb5PR6F+Lgb9rRnXe9wusMIaHwAA1WXdyaw==
   dependencies:
     deepmerge "^2.1.0"
     glob "^7.1.2"
