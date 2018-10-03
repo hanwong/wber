@@ -9,7 +9,7 @@ const resolvers: Resolvers = {
     GetRide: privateResolver(
       async (_, args: GetRideQueryArgs, { req }): Promise<GetRideResponse> => {
         const user: User = req.user;
-
+        // await Ride.delete({});
         try {
           const ride = await Ride.findOne({
             id: args.rideId

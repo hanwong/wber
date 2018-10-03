@@ -28,7 +28,10 @@ const resolvers: Resolvers = {
                 },
                 { relations: ["passenger"] }
               );
+              // user.isRiding = false;
+              // user.save();
               if (ride) {
+                // ride.remove();
                 ride.driver = user;
                 user.isTaken = true;
                 user.save();
